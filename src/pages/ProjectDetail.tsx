@@ -1,149 +1,65 @@
 
-import React, { useEffect, useState } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft, ExternalLink } from "lucide-react";
-import { projects, Project } from "@/data/projects";
-import { Compare } from "@/components/ui/compare";
+import React from "react";
+import { useParams } from "react-router-dom";
+import { projects } from "@/data/projects";
+import NotFoundComponent from "@/components/NotFoundComponent";
 
-const ProjectDetail = () => {
+const ProjectDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const [project, setProject] = useState<Project | null>(null);
-  const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
-  
-  useEffect(() => {
-    // Find the project with the matching id
-    const foundProject = projects.find(p => p.id === id);
-    
-    if (foundProject) {
-      setProject(foundProject);
-    }
-    
-    setLoading(false);
-  }, [id]);
-  
-  // If project not found, show error and navigation option
-  if (!loading && !project) {
-    return (
-      <div className="min-h-screen pt-32 flex items-center">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold text-gray-800 mb-6">Project Not Found</h1>
-          <p className="text-xl text-gray-600 mb-8">
-            Sorry, the project you're looking for doesn't exist or has been removed.
-          </p>
-          <Button 
-            onClick={() => navigate("/projects")}
-            className="bg-indigo-600 hover:bg-indigo-700"
-          >
-            View All Projects
-          </Button>
-        </div>
-      </div>
-    );
+  const project = projects.find((p) => p.id === id);
+
+  if (!project) {
+    return <NotFoundComponent />;
   }
-  
-  if (loading || !project) {
-    return (
-      <div className="min-h-screen pt-32 flex items-center justify-center">
-        <div className="animate-pulse text-2xl text-gray-400">Loading...</div>
-      </div>
-    );
-  }
-  
+
   return (
-    <div className="min-h-screen pt-20">
-      {/* Header Section */}
-      <section className="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Button
-              asChild
-              variant="ghost"
-              className="text-white hover:bg-white/10 mb-6"
+    <div className="container mx-auto py-12 px-4">
+      <div className="max-w-4xl mx-auto">
+        <img 
+          src={project.image} 
+          alt={project.title} 
+          className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl mb-8"
+        />
+        <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
+        <p className="text-gray-600 mb-8">{project.description}</p>
+        
+        <div className="flex flex-wrap gap-2 mb-8">
+          {project.tags.map((tag, index) => (
+            <span 
+              key={index}
+              className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-md text-sm"
             >
-              <Link to="/projects" className="flex items-center gap-2">
-                <ArrowLeft size={16} />
-                Back to Projects
-              </Link>
-            </Button>
-            
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">{project.title}</h1>
-            <p className="text-xl text-white/80 mb-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              {project.category}
-            </p>
-          </div>
+              {tag}
+            </span>
+          ))}
         </div>
-      </section>
-      
-      {/* Project Showcase */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-              <div className="flex items-center justify-center">
-                <div className="text-center mb-4 md:mb-0">
-                  <h3 className="text-lg font-medium mb-2 text-indigo-600">Before & After</h3>
-                  <p className="text-sm text-gray-500">Slide to compare the transformation</p>
-                </div>
-              </div>
-              <div className="flex justify-center">
-                <Compare 
-                  firstImage={project.beforeImage} 
-                  secondImage={project.afterImage}
-                  className="w-full h-[300px] rounded-lg shadow-lg"
-                  firstImageClassName="object-cover"
-                  secondImageClassname="object-cover"
-                  slideMode="hover"
-                  autoplay={true}
-                  autoplayDuration={4000}
-                />
-              </div>
-            </div>
-            
-            <div className="mb-10">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Project Overview</h2>
-              <p className="text-gray-600 mb-6">{project.fullDescription}</p>
-              
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.technologies.map((tech, index) => (
-                  <span 
-                    key={index}
-                    className="inline-block px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
-            {project.clientQuote && (
-              <div className="bg-gray-50 border-l-4 border-indigo-500 rounded-lg p-6 mb-10">
-                <blockquote className="text-lg text-gray-700 italic mb-4">
-                  "{project.clientQuote.text}"
-                </blockquote>
-                <div>
-                  <div className="font-medium text-gray-900">{project.clientQuote.author}</div>
-                  <div className="text-gray-600">{project.clientQuote.company}</div>
-                </div>
-              </div>
-            )}
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild className="bg-indigo-600 hover:bg-indigo-700">
-                <Link to="/contact">
-                  Start Your Project
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="border-indigo-500 text-indigo-600 hover:bg-indigo-50">
-                <Link to="/projects">
-                  View More Projects
-                </Link>
-              </Button>
-            </div>
-          </div>
+        
+        <div className="prose max-w-none">
+          <h2 className="text-2xl font-semibold mt-8 mb-4">The Challenge</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae justo nec arcu tristique posuere. Fusce hendrerit mauris in est scelerisque, non fermentum nisl sagittis.</p>
+          
+          <h2 className="text-2xl font-semibold mt-8 mb-4">Our Approach</h2>
+          <p>Donec euismod, nisi vel consectetur euismod, nisl nisl consectetur nisl, nec ultrices nisl nisl sit amet nisl. Donec euismod, nisi vel consectetur euismod, nisl nisl consectetur nisl, nec ultrices nisl nisl sit amet nisl.</p>
+          
+          <h2 className="text-2xl font-semibold mt-8 mb-4">The Results</h2>
+          <ul className="list-disc pl-6 mt-4 space-y-2">
+            <li>Improved user engagement by 45%</li>
+            <li>Decreased load time by 30%</li>
+            <li>Increased conversion rate by 25%</li>
+            <li>Reduced bounce rate by 20%</li>
+          </ul>
         </div>
-      </section>
+        
+        <div className="mt-12">
+          <h2 className="text-2xl font-semibold mb-6">Interested in similar results?</h2>
+          <a 
+            href="/contact" 
+            className="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors"
+          >
+            Let's Talk
+          </a>
+        </div>
+      </div>
     </div>
   );
 };
