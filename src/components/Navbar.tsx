@@ -1,9 +1,9 @@
-
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
+import NavHeader from "@/components/ui/nav-header";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -56,23 +56,12 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         {!isMobile && (
-          <div className="flex items-center space-x-1">
-            {navLinks.map((link) => (
-              <Button
-                key={link.path}
-                variant="ghost"
-                asChild
-                className={`text-white hover:bg-white/10 ${
-                  location.pathname === link.path && "bg-white/10"
-                }`}
-              >
-                <Link to={link.path}>{link.name}</Link>
-              </Button>
-            ))}
+          <div className="flex items-center">
+            <NavHeader />
             <Button
               asChild
               variant="outline"
-              className="ml-2 bg-white/10 text-white border-white/20 hover:bg-white/20"
+              className="ml-4 bg-white/10 text-white border-white/20 hover:bg-white/20"
             >
               <Link to="/contact">Let's Talk</Link>
             </Button>
