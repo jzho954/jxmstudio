@@ -1,4 +1,3 @@
-
 import React from "react";
 import Hero from "@/components/Hero";
 import ServiceCard from "@/components/ServiceCard";
@@ -31,6 +30,7 @@ const Home = () => {
             {services.map((service, index) => (
               <ServiceCard
                 key={service.id}
+                id={service.id}
                 icon={service.icon}
                 title={service.title}
                 description={service.description}

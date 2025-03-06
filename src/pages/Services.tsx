@@ -121,8 +121,8 @@ const Services = () => {
                 </div>
                 
                 <Button asChild variant="outline" className="border-indigo-500 text-indigo-600 hover:bg-indigo-50 w-fit mt-auto">
-                  <Link to="/contact" className="flex items-center gap-2">
-                    Get Started
+                  <Link to={`/services/${service.id}`} className="flex items-center gap-2">
+                    Learn More
                     <ArrowRight size={16} />
                   </Link>
                 </Button>
@@ -184,6 +184,14 @@ const getServiceDetails = (serviceId: string): string[] => {
         "React framework implementation",
         "Performance optimization",
         "Animation and micro-interactions"
+      ];
+    case "backend-dev":
+      return [
+        "API development and integration",
+        "Database design and management",
+        "Server-side application logic",
+        "Authentication and security",
+        "Scalable architecture design"
       ];
     case "seo":
       return [

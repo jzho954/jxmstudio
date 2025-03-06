@@ -1,5 +1,5 @@
 
-import { Briefcase, Code, LayoutGrid, Search } from "lucide-react";
+import { Briefcase, Code, LayoutGrid, Search, Server } from "lucide-react";
 
 export interface Service {
   id: string;
@@ -30,6 +30,13 @@ export const services: Service[] = [
     title: "Frontend Development",
     description: "Clean, efficient code using React, Tailwind CSS, and other modern technologies to bring designs to life with smooth animations and interactions.",
     color: "from-pink-500 to-indigo-500"
+  },
+  {
+    id: "backend-dev",
+    icon: Server,
+    title: "Backend Development",
+    description: "Robust server-side solutions with secure APIs, database management, and scalable architecture to power your web applications effortlessly.",
+    color: "from-blue-500 to-cyan-500"
   },
   {
     id: "seo",
