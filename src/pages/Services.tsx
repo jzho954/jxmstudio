@@ -5,8 +5,85 @@ import { Button } from "@/components/ui/button";
 import ServiceCard from "@/components/ServiceCard";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { services } from "@/data/services";
+import { Timeline } from "@/components/ui/timeline";
 
 const Services = () => {
+  // Process timeline data
+  const processData = [
+    {
+      title: "Discovery",
+      content: (
+        <div>
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
+            Understanding your business, goals, and target audience to create a strategic plan that aligns with your vision.
+          </p>
+          <div className="space-y-2">
+            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
+              ✅ In-depth consultation and requirement gathering
+            </div>
+            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
+              ✅ Market and competitor analysis
+            </div>
+            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
+              ✅ User persona development
+            </div>
+            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
+              ✅ Strategic planning and project scope definition
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Design",
+      content: (
+        <div>
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
+            Creating wireframes, mockups, and prototypes with multiple review cycles to ensure the design meets your expectations.
+          </p>
+          <div className="space-y-2">
+            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
+              ✅ Information architecture and user flow mapping
+            </div>
+            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
+              ✅ Wireframing and interactive prototyping
+            </div>
+            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
+              ✅ Visual design with brand alignment
+            </div>
+            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
+              ✅ Iterative feedback and refinement process
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Delivery",
+      content: (
+        <div>
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
+            Development, testing, and launch with continued support to ensure your website performs optimally.
+          </p>
+          <div className="space-y-2">
+            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
+              ✅ Clean, performant code implementation
+            </div>
+            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
+              ✅ Cross-browser and device testing
+            </div>
+            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
+              ✅ SEO optimization and analytics setup
+            </div>
+            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
+              ✅ Post-launch support and maintenance
+            </div>
+          </div>
+        </div>
+      ),
+    },
+  ];
+
   return (
     <div className="min-h-screen pt-20">
       {/* Header Section */}
@@ -55,51 +132,9 @@ const Services = () => {
         </div>
       </section>
       
-      {/* Process Section */}
+      {/* Process Section with Timeline */}
       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-indigo-700 mb-3">My Design Process</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              A structured, collaborative approach that ensures your project's success from concept to completion.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover-scale">
-              <div className="h-2 bg-indigo-500"></div>
-              <div className="p-6">
-                <div className="w-12 h-12 flex items-center justify-center bg-indigo-100 text-indigo-600 rounded-full mb-4 font-bold">1</div>
-                <h3 className="text-xl font-bold mb-3">Discovery</h3>
-                <p className="text-gray-600">
-                  Understanding your business, goals, and target audience to create a strategic plan that aligns with your vision.
-                </p>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover-scale">
-              <div className="h-2 bg-purple-500"></div>
-              <div className="p-6">
-                <div className="w-12 h-12 flex items-center justify-center bg-purple-100 text-purple-600 rounded-full mb-4 font-bold">2</div>
-                <h3 className="text-xl font-bold mb-3">Design</h3>
-                <p className="text-gray-600">
-                  Creating wireframes, mockups, and prototypes with multiple review cycles to ensure the design meets your expectations.
-                </p>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover-scale">
-              <div className="h-2 bg-pink-500"></div>
-              <div className="p-6">
-                <div className="w-12 h-12 flex items-center justify-center bg-pink-100 text-pink-600 rounded-full mb-4 font-bold">3</div>
-                <h3 className="text-xl font-bold mb-3">Delivery</h3>
-                <p className="text-gray-600">
-                  Development, testing, and launch with continued support to ensure your website performs optimally.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Timeline data={processData} />
       </section>
       
       {/* CTA Section */}
