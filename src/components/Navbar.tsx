@@ -51,7 +51,7 @@ const Navbar = () => {
           to="/"
           className="text-white font-bold text-xl md:text-2xl transition-all hover:scale-105"
         >
-          John<span className="text-yellow-500">Designer</span>
+          <span className="text-[#F0EE9B] font-bold">JXMStudio</span>
         </Link>
 
         {/* Desktop Navigation */}
