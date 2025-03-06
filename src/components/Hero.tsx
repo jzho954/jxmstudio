@@ -49,6 +49,10 @@ const Hero = () => {
               </Link>
             </Button>
           </div>
+          
+          <p className="text-white/50 text-sm mt-8 animate-fade-in" style={{ animationDelay: "0.8s" }}>
+            <span className="italic">Tip:</span> Try hovering and clicking on the background grid for a surprise
+          </p>
         </div>
       </div>
     </section>

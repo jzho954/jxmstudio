@@ -45,13 +45,21 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
             <motion.div
               whileHover={{
                 backgroundColor: getRandomColor(),
-                transition: { duration: 0 },
+                scale: 1.2,
+                zIndex: 10,
+                transition: { duration: 0.2 },
+              }}
+              whileTap={{
+                scale: 0.9,
+                rotate: Math.random() > 0.5 ? 5 : -5,
+                backgroundColor: getRandomColor(),
+                transition: { duration: 0.1 },
               }}
               animate={{
                 transition: { duration: 2 },
               }}
               key={`col` + j}
-              className="w-16 h-8 border-r border-t border-slate-700 relative"
+              className="w-16 h-8 border-r border-t border-slate-700 relative cursor-pointer"
             >
               {j % 2 === 0 && i % 2 === 0 ? (
                 <svg
