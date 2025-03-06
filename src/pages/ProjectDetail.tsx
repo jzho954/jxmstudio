@@ -1,8 +1,10 @@
 
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { projects } from "@/data/projects";
 import NotFoundComponent from "@/components/NotFoundComponent";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft } from "lucide-react";
 
 const ProjectDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -13,8 +15,17 @@ const ProjectDetail: React.FC = () => {
   }
 
   return (
-    <div className="container mx-auto py-12 px-4">
+    <div className="container mx-auto py-12 px-4 pt-24 sm:pt-28">
       <div className="max-w-4xl mx-auto">
+        <div className="mb-6">
+          <Button asChild variant="outline" size="sm" className="mb-4">
+            <Link to="/projects" className="flex items-center gap-2">
+              <ChevronLeft className="w-4 h-4" />
+              Back to Projects
+            </Link>
+          </Button>
+        </div>
+
         <img 
           src={project.afterImage} 
           alt={project.title} 

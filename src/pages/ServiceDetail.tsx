@@ -1,9 +1,10 @@
-
 import React, { useRef } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { services } from "@/data/services";
 import NotFoundComponent from "@/components/NotFoundComponent";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
+import { ChevronLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const ServiceDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -29,6 +30,15 @@ const ServiceDetail: React.FC = () => {
         ref={containerRef} 
         className="max-w-4xl mx-auto py-12 pt-24 sm:pt-28 overflow-auto max-h-screen"
       >
+        <div className="mb-6">
+          <Button asChild variant="outline" size="sm" className="mb-4">
+            <Link to="/services" className="flex items-center gap-2">
+              <ChevronLeft className="w-4 h-4" />
+              Back to Services
+            </Link>
+          </Button>
+        </div>
+
         <div className={`p-3 rounded-lg bg-gradient-to-r ${service.color} w-fit mb-4`}>
           <service.icon className="w-8 h-8 text-white" />
         </div>
