@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { DotsVertical } from "lucide-react";
+import { MoreVertical } from "lucide-react";
 
 interface CompareProps {
   firstImage?: string;
@@ -189,7 +189,7 @@ export const Compare = ({
           </div>
           {showHandlebar && (
             <div className="h-5 w-5 rounded-md top-1/2 -translate-y-1/2 bg-white z-30 -right-2.5 absolute flex items-center justify-center shadow-[0px_-1px_0px_0px_#FFFFFF40]">
-              <DotsVertical className="h-4 w-4 text-black" />
+              <MoreVertical className="h-4 w-4 text-black" />
             </div>
           )}
         </motion.div>
