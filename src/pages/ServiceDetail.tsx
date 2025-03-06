@@ -1,20 +1,34 @@
 
-import React from "react";
+import React, { useRef } from "react";
 import { useParams } from "react-router-dom";
 import { services } from "@/data/services";
 import NotFoundComponent from "@/components/NotFoundComponent";
+import { ScrollProgress } from "@/components/ui/scroll-progress";
 
 const ServiceDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const service = services.find((s) => s.id === id);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   if (!service) {
     return <NotFoundComponent />;
   }
 
   return (
-    <div className="container mx-auto py-12 px-4 pt-24 sm:pt-28">
-      <div className="max-w-4xl mx-auto">
+    <div className="container mx-auto px-4 relative">
+      <div className="absolute top-16 left-0 w-full z-10">
+        <div className="absolute left-0 top-0 h-0.5 w-full bg-gray-200" />
+        <ScrollProgress 
+          className="absolute top-0 h-0.5 bg-indigo-600" 
+          containerRef={containerRef}
+          springOptions={{ stiffness: 280, damping: 18, mass: 0.3 }}
+        />
+      </div>
+      
+      <div 
+        ref={containerRef} 
+        className="max-w-4xl mx-auto py-12 pt-24 sm:pt-28 overflow-auto max-h-screen"
+      >
         <div className={`p-3 rounded-lg bg-gradient-to-r ${service.color} w-fit mb-4`}>
           <service.icon className="w-8 h-8 text-white" />
         </div>
