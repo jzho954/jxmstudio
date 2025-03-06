@@ -1,17 +1,16 @@
 
-import React, { useState } from "react";
+import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { projects } from "@/data/projects";
 import NotFoundComponent from "@/components/NotFoundComponent";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft } from "lucide-react";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
+import { Compare } from "@/components/ui/compare";
 
 const ProjectDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const project = projects.find((p) => p.id === id);
-  const [isBeforeHovered, setIsBeforeHovered] = useState(false);
-  const [isAfterHovered, setIsAfterHovered] = useState(false);
 
   if (!project) {
     return <NotFoundComponent />;
@@ -53,41 +52,19 @@ const ProjectDetail: React.FC = () => {
           <p>{project.fullDescription}</p>
           
           <h2 className="text-2xl font-semibold mt-8 mb-4">Our Approach</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-            <div 
-              className="relative overflow-hidden rounded-lg"
-              onMouseEnter={() => setIsBeforeHovered(true)}
-              onMouseLeave={() => setIsBeforeHovered(false)}
-            >
-              <h3 className="text-lg font-medium mb-2">Before</h3>
-              <div className="relative overflow-hidden rounded-lg h-48">
-                <img 
-                  src={project.beforeImage} 
-                  alt={`${project.title} before`} 
-                  className={`w-full h-full object-cover rounded-lg transition-transform duration-700 ${isBeforeHovered ? 'scale-110' : 'scale-100'}`}
-                />
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                  <span className="text-white font-medium text-sm">Before</span>
-                </div>
-              </div>
-            </div>
-            
-            <div 
-              className="relative overflow-hidden rounded-lg"
-              onMouseEnter={() => setIsAfterHovered(true)}
-              onMouseLeave={() => setIsAfterHovered(false)}
-            >
-              <h3 className="text-lg font-medium mb-2">After</h3>
-              <div className="relative overflow-hidden rounded-lg h-48">
-                <img 
-                  src={project.afterImage} 
-                  alt={`${project.title} after`} 
-                  className={`w-full h-full object-cover rounded-lg transition-transform duration-700 ${isAfterHovered ? 'scale-110' : 'scale-100'}`}
-                />
-                <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                  <span className="text-white font-medium text-sm">After</span>
-                </div>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-6 my-8">
+            <div className="rounded-lg overflow-hidden">
+              <h3 className="text-lg font-medium mb-2">Before & After</h3>
+              <Compare 
+                firstImage={project.beforeImage}
+                secondImage={project.afterImage}
+                className="w-full h-[350px] md:h-[450px] rounded-lg object-cover"
+                firstImageClassName="object-cover"
+                secondImageClassname="object-cover"
+                slideMode="hover"
+                autoplay={true}
+                autoplayDuration={3000}
+              />
             </div>
           </div>
           
