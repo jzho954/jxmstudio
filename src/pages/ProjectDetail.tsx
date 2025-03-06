@@ -16,7 +16,7 @@ const ProjectDetail: React.FC = () => {
     <div className="container mx-auto py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <img 
-          src={project.image} 
+          src={project.afterImage} 
           alt={project.title} 
           className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl mb-8"
         />
@@ -24,22 +24,50 @@ const ProjectDetail: React.FC = () => {
         <p className="text-gray-600 mb-8">{project.description}</p>
         
         <div className="flex flex-wrap gap-2 mb-8">
-          {project.tags.map((tag, index) => (
+          {project.technologies.map((tech, index) => (
             <span 
               key={index}
               className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-md text-sm"
             >
-              {tag}
+              {tech}
             </span>
           ))}
         </div>
         
         <div className="prose max-w-none">
           <h2 className="text-2xl font-semibold mt-8 mb-4">The Challenge</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae justo nec arcu tristique posuere. Fusce hendrerit mauris in est scelerisque, non fermentum nisl sagittis.</p>
+          <p>{project.fullDescription}</p>
           
           <h2 className="text-2xl font-semibold mt-8 mb-4">Our Approach</h2>
-          <p>Donec euismod, nisi vel consectetur euismod, nisl nisl consectetur nisl, nec ultrices nisl nisl sit amet nisl. Donec euismod, nisi vel consectetur euismod, nisl nisl consectetur nisl, nec ultrices nisl nisl sit amet nisl.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+            <div>
+              <h3 className="text-lg font-medium mb-2">Before</h3>
+              <img 
+                src={project.beforeImage} 
+                alt={`${project.title} before`} 
+                className="w-full h-48 object-cover rounded-lg"
+              />
+            </div>
+            <div>
+              <h3 className="text-lg font-medium mb-2">After</h3>
+              <img 
+                src={project.afterImage} 
+                alt={`${project.title} after`} 
+                className="w-full h-48 object-cover rounded-lg"
+              />
+            </div>
+          </div>
+          
+          {project.clientQuote && (
+            <div className="bg-indigo-50 p-6 rounded-lg my-8">
+              <blockquote className="italic text-gray-700 mb-4">
+                "{project.clientQuote.text}"
+              </blockquote>
+              <p className="font-medium">
+                {project.clientQuote.author}, {project.clientQuote.company}
+              </p>
+            </div>
+          )}
           
           <h2 className="text-2xl font-semibold mt-8 mb-4">The Results</h2>
           <ul className="list-disc pl-6 mt-4 space-y-2">

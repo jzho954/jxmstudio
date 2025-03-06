@@ -15,7 +15,7 @@ const ServiceDetail: React.FC = () => {
   return (
     <div className="container mx-auto py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <div className={`p-3 rounded-lg bg-gradient-to-r ${service.gradient} w-fit mb-4`}>
+        <div className={`p-3 rounded-lg bg-gradient-to-r ${service.color} w-fit mb-4`}>
           <service.icon className="w-8 h-8 text-white" />
         </div>
         <h1 className="text-4xl font-bold mb-6">{service.title}</h1>
