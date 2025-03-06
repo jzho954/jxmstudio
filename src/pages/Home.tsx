@@ -1,3 +1,4 @@
+
 import React from "react";
 import Hero from "@/components/Hero";
 import ServiceCard from "@/components/ServiceCard";
@@ -20,7 +21,7 @@ const Home = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-indigo-700 mb-3">What I Offer</h2>
+            <h2 className="text-4xl font-bold text-navy-500 mb-3">What I Offer</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Specialized web design and development services to create digital experiences that captivate and convert.
             </p>
@@ -41,7 +42,7 @@ const Home = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button asChild variant="outline" className="border-indigo-500 text-indigo-600 hover:bg-indigo-50">
+            <Button asChild variant="outline" className="border-navy-500 text-navy-600 hover:bg-navy-50">
               <Link to="/services" className="flex items-center gap-2">
                 View All Services
                 <ArrowRight size={16} />
@@ -55,7 +56,7 @@ const Home = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-purple-700 mb-3">My Work</h2>
+            <h2 className="text-4xl font-bold text-navy-500 mb-3">My Work</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               A selection of my recent projects showcasing web design and development expertise.
             </p>
@@ -77,7 +78,7 @@ const Home = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button asChild variant="outline" className="border-purple-500 text-purple-600 hover:bg-purple-50">
+            <Button asChild variant="outline" className="border-navy-500 text-navy-600 hover:bg-navy-50">
               <Link to="/projects" className="flex items-center gap-2">
                 View All Projects
                 <ArrowRight size={16} />
@@ -88,7 +89,7 @@ const Home = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-navy-500 to-navy-700 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">Ready to Create Something Amazing?</h2>
@@ -99,7 +100,7 @@ const Home = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-left">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-pink-300 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-yellow-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <h3 className="font-semibold text-xl mb-2">Tailored Solutions</h3>
                     <p className="text-white/80">
@@ -111,7 +112,7 @@ const Home = () => {
               
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-left">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-pink-300 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-yellow-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <h3 className="font-semibold text-xl mb-2">Stress-Free Process</h3>
                     <p className="text-white/80">
@@ -122,7 +123,7 @@ const Home = () => {
               </div>
             </div>
             
-            <Button asChild size="lg" className="bg-white text-indigo-600 hover:bg-white/90 font-medium px-8">
+            <Button asChild size="lg" className="bg-white text-navy-600 hover:bg-white/90 font-medium px-8">
               <Link to="/contact">
                 Schedule Your Free Consultation
               </Link>

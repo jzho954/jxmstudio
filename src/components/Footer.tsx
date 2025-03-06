@@ -7,12 +7,12 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-indigo-900 text-white py-12">
+    <footer className="bg-navy-700 text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4">
             <Link to="/" className="text-2xl font-bold">
-              John<span className="text-pink-400">Designer</span>
+              John<span className="text-yellow-500">Designer</span>
             </Link>
             <p className="text-white/80 max-w-md">
               Creating stunning digital experiences that help businesses grow and connect with their audience through thoughtful design.
@@ -43,19 +43,19 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Connect</h3>
             <div className="flex items-center gap-4 mb-4">
-              <a href="https://twitter.com" className="hover:text-pink-400 transition-colors" aria-label="Twitter">
+              <a href="https://twitter.com" className="hover:text-yellow-500 transition-colors" aria-label="Twitter">
                 <Twitter size={20} />
               </a>
-              <a href="https://instagram.com" className="hover:text-pink-400 transition-colors" aria-label="Instagram">
+              <a href="https://instagram.com" className="hover:text-yellow-500 transition-colors" aria-label="Instagram">
                 <Instagram size={20} />
               </a>
-              <a href="https://linkedin.com" className="hover:text-pink-400 transition-colors" aria-label="LinkedIn">
+              <a href="https://linkedin.com" className="hover:text-yellow-500 transition-colors" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
-              <a href="https://github.com" className="hover:text-pink-400 transition-colors" aria-label="GitHub">
+              <a href="https://github.com" className="hover:text-yellow-500 transition-colors" aria-label="GitHub">
                 <Github size={20} />
               </a>
-              <a href="mailto:hello@johndesigner.com" className="hover:text-pink-400 transition-colors" aria-label="Email">
+              <a href="mailto:hello@johndesigner.com" className="hover:text-yellow-500 transition-colors" aria-label="Email">
                 <Mail size={20} />
               </a>
             </div>

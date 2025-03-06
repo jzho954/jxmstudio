@@ -42,8 +42,8 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "py-3 bg-gradient-to-r from-indigo-600 to-purple-600 shadow-lg"
-          : "py-6 bg-gradient-to-r from-indigo-600/90 to-purple-600/90 backdrop-blur-sm"
+          ? "py-3 bg-gradient-to-r from-navy-500 to-navy-700 shadow-lg"
+          : "py-6 bg-gradient-to-r from-navy-500/90 to-navy-700/90 backdrop-blur-sm"
       }`}
     >
       <div className="container px-4 mx-auto flex justify-between items-center">
@@ -51,7 +51,7 @@ const Navbar = () => {
           to="/"
           className="text-white font-bold text-xl md:text-2xl transition-all hover:scale-105"
         >
-          John<span className="text-pink-400">Designer</span>
+          John<span className="text-yellow-500">Designer</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -95,7 +95,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobile && (
         <div
-          className={`absolute top-full left-0 right-0 bg-gradient-to-b from-indigo-600 to-purple-700 shadow-lg transition-all duration-300 ${
+          className={`absolute top-full left-0 right-0 bg-gradient-to-b from-navy-500 to-navy-700 shadow-lg transition-all duration-300 ${
             isMenuOpen ? "max-h-[500px] py-4" : "max-h-0 py-0 overflow-hidden"
           }`}
         >

@@ -16,7 +16,7 @@ const Projects = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Header Section */}
-      <section className="bg-gradient-to-br from-purple-500 via-pink-500 to-indigo-500 text-white py-20">
+      <section className="bg-gradient-to-br from-navy-500 via-navy-600 to-navy-700 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">My Portfolio</h1>
@@ -34,7 +34,7 @@ const Projects = () => {
             <Button
               variant={filter === null ? "default" : "outline"}
               onClick={() => setFilter(null)}
-              className={filter === null ? "bg-indigo-600" : "border-gray-300"}
+              className={filter === null ? "bg-navy-500" : "border-gray-300"}
             >
               All Projects
             </Button>
@@ -44,7 +44,7 @@ const Projects = () => {
                 key={category}
                 variant={filter === category ? "default" : "outline"}
                 onClick={() => setFilter(category)}
-                className={filter === category ? "bg-indigo-600" : "border-gray-300"}
+                className={filter === category ? "bg-navy-500" : "border-gray-300"}
               >
                 {category}
               </Button>

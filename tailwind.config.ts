@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,25 +62,19 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				indigo: {
-					500: '#4F46E5',
-					600: '#4338ca',
-					700: '#3730a3',
-					800: '#312e81',
-					900: '#283593'
+				navy: {
+					500: '#25344F',
+					600: '#1E2A40',
+					700: '#172031',
+					800: '#101622',
+					900: '#080C13'
 				},
-				purple: {
-					500: '#7C3AED',
-					600: '#6d28d9',
-					700: '#5b21b6',
-					800: '#4c1d95',
-					900: '#4a1d96'
-				},
-				pink: {
-					400: '#f472b6',
-					500: '#EC4899',
-					600: '#db2777',
-					700: '#be185d'
+				yellow: {
+					400: '#F2F0B1',
+					500: '#F0EE9B',
+					600: '#EBE980',
+					700: '#E6E465',
+					800: '#E1DF4A'
 				}
 			},
 			fontFamily: {

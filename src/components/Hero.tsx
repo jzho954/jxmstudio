@@ -22,7 +22,7 @@ const Hero = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 animate-fade-in text-slate-900 dark:text-white" style={{ animationDelay: "0.2s" }}>
-            Crafting Stunning Websites <span className="text-pink-400">That Pop</span>
+            Crafting Stunning Websites <span className="text-yellow-500">That Pop</span>
           </h1>
           
           <p className="text-xl md:text-2xl italic text-slate-700 dark:text-white/80 mb-10 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.4s" }}>
@@ -30,7 +30,7 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in" style={{ animationDelay: "0.6s" }}>
-            <Button asChild size="lg" className="bg-indigo-600 text-white hover:bg-indigo-700 font-medium px-8">
+            <Button asChild size="lg" className="bg-navy-500 text-white hover:bg-navy-600 font-medium px-8">
               <Link to="/contact">
                 Let's Work Together
               </Link>

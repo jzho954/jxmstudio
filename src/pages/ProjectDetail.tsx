@@ -38,7 +38,7 @@ const ProjectDetail: React.FC = () => {
           {project.technologies.map((tech, index) => (
             <span 
               key={index}
-              className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-md text-sm"
+              className="px-3 py-1 bg-navy-100 text-navy-800 rounded-md text-sm"
             >
               {tech}
             </span>
@@ -70,7 +70,7 @@ const ProjectDetail: React.FC = () => {
           </div>
           
           {project.clientQuote && (
-            <div className="bg-indigo-50 p-6 rounded-lg my-8">
+            <div className="bg-navy-50 p-6 rounded-lg my-8">
               <blockquote className="italic text-gray-700 mb-4">
                 "{project.clientQuote.text}"
               </blockquote>
@@ -93,7 +93,7 @@ const ProjectDetail: React.FC = () => {
           <h2 className="text-2xl font-semibold mb-6">Interested in similar results?</h2>
           <a 
             href="/contact" 
-            className="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors"
+            className="px-6 py-3 bg-navy-600 text-white rounded-md hover:bg-navy-700 transition-colors"
           >
             Let's Talk
           </a>

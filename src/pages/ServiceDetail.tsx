@@ -1,3 +1,4 @@
+
 import React, { useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import { services } from "@/data/services";
@@ -15,12 +16,18 @@ const ServiceDetail: React.FC = () => {
     return <NotFoundComponent />;
   }
 
+  // Replace gradient colors with navy/yellow
+  let updatedColor = service.color;
+  if (service.color.includes("indigo") || service.color.includes("purple") || service.color.includes("pink")) {
+    updatedColor = "from-navy-500 to-navy-700";
+  }
+
   return (
     <div className="container mx-auto px-4 relative">
       <div className="absolute top-16 left-0 w-full z-10">
         <div className="absolute left-0 top-0 h-0.5 w-full bg-gray-200" />
         <ScrollProgress 
-          className="absolute top-0 h-0.5 bg-indigo-600" 
+          className="absolute top-0 h-0.5 bg-navy-600" 
           containerRef={containerRef}
           springOptions={{ stiffness: 280, damping: 18, mass: 0.3 }}
         />
@@ -39,7 +46,7 @@ const ServiceDetail: React.FC = () => {
           </Button>
         </div>
 
-        <div className={`p-3 rounded-lg bg-gradient-to-r ${service.color} w-fit mb-4`}>
+        <div className={`p-3 rounded-lg bg-gradient-to-r ${updatedColor} w-fit mb-4`}>
           <service.icon className="w-8 h-8 text-white" />
         </div>
         <h1 className="text-4xl font-bold mb-6">{service.title}</h1>
@@ -74,7 +81,7 @@ const ServiceDetail: React.FC = () => {
           <h2 className="text-2xl font-semibold mb-6">Ready to get started?</h2>
           <a 
             href="/contact" 
-            className="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors"
+            className="px-6 py-3 bg-navy-600 text-white rounded-md hover:bg-navy-700 transition-colors"
           >
             Contact Us
           </a>

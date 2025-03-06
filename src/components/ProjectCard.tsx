@@ -33,11 +33,11 @@ const ProjectCard = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="absolute inset-0 bg-gradient-to-t from-indigo-50 to-white opacity-90 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-navy-50 to-white opacity-90 z-0"></div>
       <div className="relative z-10">
         <CardHeader className="pb-0">
           <div className="mb-2">
-            <span className="inline-block px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium">
+            <span className="inline-block px-3 py-1 bg-navy-100 text-navy-700 rounded-full text-sm font-medium">
               {category}
             </span>
           </div>
@@ -75,7 +75,7 @@ const ProjectCard = ({
           <Button
             asChild
             variant="outline"
-            className="w-full border-indigo-500 text-indigo-600 hover:bg-indigo-50 group"
+            className="w-full border-navy-500 text-navy-600 hover:bg-navy-50 group"
           >
             <Link to={`/projects/${id}`} className="flex items-center justify-center gap-2">
               View Details

@@ -9,7 +9,7 @@ const FAQ = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Header Section */}
-      <section className="bg-gradient-to-br from-purple-500 via-pink-500 to-indigo-500 text-white py-16">
+      <section className="bg-gradient-to-br from-navy-500 via-navy-600 to-navy-700 text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">Got Questions?</h1>
@@ -29,7 +29,7 @@ const FAQ = () => {
             <p className="text-lg text-gray-600 mb-6">
               Still have questions? Feel free to reach out directly!
             </p>
-            <Button asChild className="bg-indigo-600 hover:bg-indigo-700">
+            <Button asChild className="bg-navy-600 hover:bg-navy-700">
               <Link to="/contact">
                 Contact Me
               </Link>
@@ -42,12 +42,12 @@ const FAQ = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-indigo-700 mb-6">Ready to Start Your Project?</h2>
+            <h2 className="text-3xl font-bold text-navy-700 mb-6">Ready to Start Your Project?</h2>
             <p className="text-xl text-gray-600 mb-8">
               Let's create a website that perfectly represents your brand and helps you achieve your goals.
             </p>
             
-            <Button asChild className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white">
+            <Button asChild className="bg-gradient-to-r from-navy-600 to-navy-700 hover:from-navy-700 hover:to-navy-800 text-white">
               <Link to="/contact">
                 Schedule a Free Consultation
               </Link>
