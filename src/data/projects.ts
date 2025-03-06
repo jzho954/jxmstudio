@@ -21,8 +21,8 @@ export const projects: Project[] = [
     title: "E-commerce Redesign",
     category: "Web Design",
     description: "Complete redesign of an outdated e-commerce platform with modern UI and improved user flow.",
-    beforeImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop&ixlib=rb-4.0.3",
-    afterImage: "https://images.unsplash.com/photo-1521493959102-bdd6677fdd81?q=80&w=2424&auto=format&fit=crop&ixlib=rb-4.0.3",
+    beforeImage: "/lovable-uploads/ff230f24-8b76-41ea-8ded-ebf48bc993a0.png",
+    afterImage: "/lovable-uploads/7351ea72-f37d-448c-b066-e7dc46239084.png",
     fullDescription: "This e-commerce platform was struggling with cart abandonment and low conversion rates. I completely redesigned the user experience, focusing on a cleaner product presentation, streamlined checkout process, and mobile optimization. The result was a 43% increase in conversions and a 27% decrease in cart abandonment.",
     technologies: ["React", "Next.js", "Tailwind CSS", "Stripe API", "Framer Motion"],
     clientQuote: {
@@ -36,8 +36,8 @@ export const projects: Project[] = [
     title: "Restaurant Website",
     category: "UI/UX Design",
     description: "Modern website with online reservation system and mobile-optimized menu for a high-end restaurant.",
-    beforeImage: "https://images.unsplash.com/photo-1567443024551-f3e3a7b9d98c?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3",
-    afterImage: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?q=80&w=2429&auto=format&fit=crop&ixlib=rb-4.0.3",
+    beforeImage: "/lovable-uploads/05427f30-a45b-4280-87a4-87cbd79563c1.png",
+    afterImage: "/lovable-uploads/9502bfbe-7698-4362-ab15-aa1a1a729c58.png",
     fullDescription: "This upscale restaurant needed a digital presence that matched the elegance of their dining experience. I designed a visually stunning website with smooth animations, an intuitive reservation system, and a beautifully presented menu that adapts perfectly to mobile devices. The site also features professional food photography and chef profiles to tell the restaurant's unique story.",
     technologies: ["React", "Framer Motion", "Tailwind CSS", "Reservation API", "Responsive Design"],
     clientQuote: {
