@@ -3,17 +3,25 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Boxes } from "@/components/ui/background-boxes";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 z-0"></div>
+    <section className="relative min-h-screen flex items-center py-20 overflow-hidden bg-slate-900">
+      {/* Background with gradient overlay */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-br from-indigo-500/70 via-purple-500/70 to-pink-500/70"></div>
+      
+      {/* Background boxes */}
+      <Boxes className="z-0" />
+      
+      {/* Mask for gradient fade */}
+      <div className="absolute inset-0 w-full h-full z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
       
       {/* Decoration elements */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-10 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl"></div>
+      <div className="absolute top-20 left-10 w-64 h-64 bg-white/10 rounded-full blur-3xl z-20"></div>
+      <div className="absolute bottom-20 right-10 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl z-20"></div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-30">
         <div className="max-w-4xl mx-auto text-center text-white">
           <div className="inline-block px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6 animate-fade-in">
             <p className="text-white/90 font-medium">Web Designer & Developer</p>
