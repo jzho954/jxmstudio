@@ -14,7 +14,7 @@ const Hero = () => {
       {/* Background boxes */}
       <Boxes className="z-0" />
       
-      {/* Mask for gradient fade */}
+      {/* Mask for gradient fade - making it not block pointer events */}
       <div className="absolute inset-0 w-full h-full z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
       
       {/* Decoration elements */}
