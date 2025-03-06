@@ -4,6 +4,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { projects, Project } from "@/data/projects";
+import { Compare } from "@/components/ui/compare";
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -80,25 +81,23 @@ const ProjectDetail = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-              <div className="relative overflow-hidden rounded-lg shadow-lg">
-                <img 
-                  src={project.beforeImage} 
-                  alt={`${project.title} before`} 
-                  className="w-full h-auto object-cover rounded-lg"
-                />
-                <div className="absolute top-4 left-4 px-4 py-2 bg-black/70 text-white rounded-md">
-                  Before
+              <div className="flex items-center justify-center">
+                <div className="text-center mb-4 md:mb-0">
+                  <h3 className="text-lg font-medium mb-2 text-indigo-600">Before & After</h3>
+                  <p className="text-sm text-gray-500">Slide to compare the transformation</p>
                 </div>
               </div>
-              <div className="relative overflow-hidden rounded-lg shadow-lg">
-                <img 
-                  src={project.afterImage} 
-                  alt={`${project.title} after`} 
-                  className="w-full h-auto object-cover rounded-lg"
+              <div className="flex justify-center">
+                <Compare 
+                  firstImage={project.beforeImage} 
+                  secondImage={project.afterImage}
+                  className="w-full h-[300px] rounded-lg shadow-lg"
+                  firstImageClassName="object-cover"
+                  secondImageClassname="object-cover"
+                  slideMode="hover"
+                  autoplay={true}
+                  autoplayDuration={4000}
                 />
-                <div className="absolute top-4 left-4 px-4 py-2 bg-black/70 text-white rounded-md">
-                  After
-                </div>
               </div>
             </div>
             
