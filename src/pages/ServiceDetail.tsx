@@ -13,7 +13,7 @@ const ServiceDetail: React.FC = () => {
   }
 
   return (
-    <div className="container mx-auto py-12 px-4">
+    <div className="container mx-auto py-12 px-4 pt-24 sm:pt-28">
       <div className="max-w-4xl mx-auto">
         <div className={`p-3 rounded-lg bg-gradient-to-r ${service.color} w-fit mb-4`}>
           <service.icon className="w-8 h-8 text-white" />
