@@ -50,9 +50,9 @@ export const projects: Project[] = [
   },
   {
     id: "dream-app",
-    title: "Dream App",
+    title: "Dream JournalApp",
     category: "App Design",
-    description: "Minimalist, app design for a dream journal app that helps users record and analyze their dreams much easier than convetional journaling.",
+    description: "Minimalist, app design and build for a client needing a dream journal app that helps the record and analyze their dreams much easier than convetional journaling.",
     beforeImage: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2455&auto=format&fit=crop&ixlib=rb-4.0.3",
     afterImage: "https://images.unsplash.com/photo-1545665277-5937489579f2?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3",
     fullDescription: "Client needed a dream journal app that would help them record and analyze their dreams much easier than convetional journaling. I designed a minimalist interface with advanced image optimization, lazy loading, and subtle transitions. The gallery features intuitive navigation and adapts beautifully to different screen sizes.",
