@@ -42,7 +42,7 @@ const Home = () => {
           
           <div className="text-center mt-12">
             <Button asChild variant="outline" className="border-navy-500 text-navy-600 hover:bg-navy-50">
-              <Link to="/services" className="flex items-center gap-2">
+              <Link to="/services" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-2">
                 View All Services
                 <ArrowRight size={16} />
               </Link>
@@ -78,7 +78,7 @@ const Home = () => {
           
           <div className="text-center mt-12">
             <Button asChild variant="outline" className="border-navy-500 text-navy-600 hover:bg-navy-50">
-              <Link to="/projects" className="flex items-center gap-2">
+              <Link to="/projects" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-2">
                 View All Projects
                 <ArrowRight size={16} />
               </Link>

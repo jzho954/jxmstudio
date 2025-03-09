@@ -23,23 +23,49 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // This would be a real API call in production
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "83498590-8ffe-4249-93e5-d8fde2cb7abc",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: "New Contact Form Submission",
+        }),
+      });
+      
+      const result = await response.json();
+      if (result.success) {
+        toast({
+          title: "Message Sent!",
+          description: "Thanks for reaching out. I'll get back to you soon!",
+        });
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        throw new Error(result.message || "Something went wrong");
+      }
+    } catch (error) {
       toast({
-        title: "Message Sent!",
-        description: "Thanks for reaching out. I'll get back to you soon!",
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to send message. Please try again.",
+        variant: "destructive",
       });
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
-    }, 1000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

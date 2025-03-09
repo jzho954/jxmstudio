@@ -52,9 +52,7 @@ const Footer = () => {
               <a href="https://linkedin.com" className="hover:text-[#ffff33] transition-colors" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
-              <a href="https://github.com" className="hover:text-[#ffff33] transition-colors" aria-label="GitHub">
-                <Github size={20} />
-              </a>
+              
               <a href="mailto:jamiezhou777@gmail.com" className="hover:text-[#ffff33] transition-colors" aria-label="Email">
                 <Mail size={20} />
               </a>

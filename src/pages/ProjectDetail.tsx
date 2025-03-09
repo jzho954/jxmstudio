@@ -93,12 +93,38 @@ const ProjectDetail: React.FC = () => {
           )}
           
           <h2 className="text-2xl font-semibold mt-8 mb-4">The Results</h2>
-          <ul className="list-disc pl-6 mt-4 space-y-2">
-            <li>Improved user engagement by 45%</li>
-            <li>Decreased load time by 30%</li>
-            <li>Increased conversion rate by 25%</li>
-            <li>Reduced bounce rate by 20%</li>
-          </ul>
+          {project.id === "windshield-revamp" && (
+            <ul className="list-disc pl-6 mt-4 space-y-2">
+              <li>40% increase in appointment bookings</li>
+              <li>80% boost in local search traffic</li>
+              <li>Added mobile compatibility</li>
+              <li>Streamlined booking process</li>
+            </ul>
+          )}
+          {project.id === "plumbing-overhaul" && (
+            <ul className="list-disc pl-6 mt-4 space-y-2">
+              <li>60% increase in online inquiries</li>
+              <li>Enhanced mobile responsiveness</li>
+              <li>Improved service visibility</li>
+              <li>Streamlined customer booking process</li>
+            </ul>
+          )}
+          {project.id === "pest-removal-redesign" && (
+            <ul className="list-disc pl-6 mt-4 space-y-2">
+              <li>Increased customer trust through visual design</li>
+              <li>Enhanced mobile engagement</li>
+              <li>Simplified service navigation</li>
+              <li>Improved booking conversion rate</li>
+            </ul>
+          )}
+          {project.id === "dream-app" && (
+            <ul className="list-disc pl-6 mt-4 space-y-2">
+              <li>Built and designed IOS app</li>
+              <li>Andriod Compatible</li>
+              <li>Improved dream analysis</li>
+              <li>Very satisfied client</li>
+            </ul>
+          )}
         </div>
         
         <div className="mt-12">
