@@ -14,7 +14,7 @@ export const services: Service[] = [
     id: "web-design",
     icon: Briefcase,
     title: "Web Design",
-    description: "Pixel-perfect, responsive designs built with modern frameworks that adapt flawlessly to any device. I create visually stunning websites that captivate your audience.",
+    description: "Fully custom, responsive designs that pop on any device, built with modern frameworks to showcase your business in style.",
     color: "from-navy-500 to-navy-700"
   },
   {

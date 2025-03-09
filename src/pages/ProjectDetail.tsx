@@ -1,5 +1,4 @@
-
-import React from "react";
+import React, { useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import { projects } from "@/data/projects";
 import NotFoundComponent from "@/components/NotFoundComponent";
@@ -7,17 +6,31 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft } from "lucide-react";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { Compare } from "@/components/ui/compare";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const ProjectDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const project = projects.find((p) => p.id === id);
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  // Use the scroll to top hook
+  useScrollToTop();
 
   if (!project) {
     return <NotFoundComponent />;
   }
 
   return (
-    <div className="container mx-auto py-12 px-4 pt-24 sm:pt-28">
+    <div className="container mx-auto py-12 px-4 pt-24 sm:pt-28" ref={containerRef}>
+      <div className="absolute top-16 left-0 w-full z-10">
+        <div className="absolute left-0 top-0 h-0.5 w-full bg-gray-200" />
+        <ScrollProgress 
+          className="absolute top-0 h-0.5 bg-navy-600" 
+          containerRef={containerRef}
+          springOptions={{ stiffness: 280, damping: 18, mass: 0.3 }}
+        />
+      </div>
+      
       <div className="max-w-4xl mx-auto">
         <div className="mb-6">
           <Button asChild variant="outline" size="sm" className="mb-4">

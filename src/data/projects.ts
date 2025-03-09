@@ -1,4 +1,3 @@
-
 export interface Project {
   id: string;
   title: string;
@@ -17,33 +16,33 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "ecommerce-redesign",
-    title: "E-commerce Redesign",
+    id: "windshield-revamp",
+    title: "Car Windshield Revamp",
     category: "Web Design",
-    description: "Complete redesign of an outdated e-commerce platform with modern UI and improved user flow.",
+    description: "A full custom redesign for a car windshield repair company, featuring a modern look and seamless booking flow.",
     beforeImage: "/lovable-uploads/ff230f24-8b76-41ea-8ded-ebf48bc993a0.png",
     afterImage: "/lovable-uploads/7351ea72-f37d-448c-b066-e7dc46239084.png",
-    fullDescription: "This e-commerce platform was struggling with cart abandonment and low conversion rates. I completely redesigned the user experience, focusing on a cleaner product presentation, streamlined checkout process, and mobile optimization. The result was a 43% increase in conversions and a 27% decrease in cart abandonment.",
-    technologies: ["React", "Next.js", "Tailwind CSS", "Stripe API", "Framer Motion"],
+    fullDescription: "This car windshield repair company had an outdated site that turned customers away with slow navigation and poor visibility. I built a custom website from scratch, with a sleek design, an easy-to-use booking system, and mobile-first optimization. Post-launch, they saw a 40% uptick in appointment bookings and a 30% boost in local search traffic.",
+    technologies: ["React", "Next.js", "Tailwind CSS", "Google Maps API", "Framer Motion"],
     clientQuote: {
-      text: "The redesign completely transformed our online presence. Sales increased immediately after launch, and customers have been raving about how easy the site is to use now.",
-      author: "Sarah Johnson",
-      company: "Elemental Lifestyle"
+      text: "The new site's a game-changer—customers love the quick booking feature, and we're getting way more calls. It's night and day from the old one!",
+      author: "Mike Reynolds",
+      company: "Auckland Windshield Pros"
     }
   },
   {
-    id: "restaurant-website",
-    title: "Restaurant Website",
+    id: "plumbing-overhaul",
+    title: "Plumbing Overhaul",
     category: "UI/UX Design",
-    description: "Modern website with online reservation system and mobile-optimized menu for a high-end restaurant.",
+    description: "Custom website with an easy booking system and mobile-friendly service pages for a local plumbing business.",
     beforeImage: "/lovable-uploads/05427f30-a45b-4280-87a4-87cbd79563c1.png",
     afterImage: "/lovable-uploads/9502bfbe-7698-4362-ab15-aa1a1a729c58.png",
-    fullDescription: "This upscale restaurant needed a digital presence that matched the elegance of their dining experience. I designed a visually stunning website with smooth animations, an intuitive reservation system, and a beautifully presented menu that adapts perfectly to mobile devices. The site also features professional food photography and chef profiles to tell the restaurant's unique story.",
-    technologies: ["React", "Framer Motion", "Tailwind CSS", "Reservation API", "Responsive Design"],
+    fullDescription: "This local plumbing company needed a website that matched their reliable service with a modern edge. I crafted a custom site from scratch, featuring a user-friendly booking system, clear service breakdowns, and mobile optimization for on-the-go customers. With sharp visuals and smooth animations, it now showcases their expertise and drives a 60% increase in online inquiries.",
+    technologies: ["React", "Framer Motion", "Tailwind CSS", "Booking API", "Responsive Design"],
     clientQuote: {
-      text: "Our new website perfectly captures the essence of our restaurant. Online reservations have increased by 65%, and guests frequently mention how they love browsing our menu before they arrive.",
-      author: "Michael Chen",
-      company: "Fusion Table"
+      text: "The new site nails it—customers book us in a snap, and we're getting way more calls. It's made our business look top-notch!",
+      author: "Tom Bradley",
+      company: "Auckland Plumbing Co."
     }
   },
   {

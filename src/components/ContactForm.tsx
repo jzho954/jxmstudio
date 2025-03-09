@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -88,7 +87,7 @@ const ContactForm = () => {
       <div className="px-6 py-4 bg-indigo-50 rounded-lg border border-indigo-100 flex items-start gap-3">
         <Calendar className="w-6 h-6 text-indigo-600 flex-shrink-0 mt-0.5" />
         <p className="text-sm text-indigo-900">
-          <span className="font-medium">Schedule a free consultation:</span> After submitting, we'll arrange a 15-30 minute call to discuss your project needs in detail.
+          <span className="font-medium">Schedule a free consultation:</span> After submitting, I'll arrange a 15-30 minute call to discuss your project needs in detail.
         </p>
       </div>
       
