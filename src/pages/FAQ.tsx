@@ -1,11 +1,14 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import FAQAccordion from "@/components/FAQAccordion";
 import { faqItems } from "@/data/faq";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const FAQ = () => {
+  // Use the scroll to top hook
+  useScrollToTop();
+
   return (
     <div className="min-h-screen pt-20">
       {/* Header Section */}
