@@ -18,6 +18,7 @@ const FAQ = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">Got Questions?</h1>
             <p className="text-xl text-white/80 mb-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
               Find answers to common questions about working with me and my web design process.
+              
             </p>
           </div>
         </div>
