@@ -10,7 +10,7 @@ export const faqItems: FAQItem[] = [
   },
   {
     question: "How long does a typical project take?",
-    answer: "Project timelines vary based on scope and complexity. A simple portfolio site might take 2-3 weeks, while a complex e-commerce platform could take 2-3 months. During our initial consultation, I'll provide a detailed timeline after understanding your specific requirements."
+    answer: "Project timelines vary based on scope and complexity. A simple portfolio site might take a couple days, while a complex ecommerce platform could take months. During our initial consultation, I'll provide a detailed timeline after understanding your specific requirements."
   },
   {
     question: "Do you offer ongoing maintenance?",
