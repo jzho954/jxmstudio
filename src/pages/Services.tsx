@@ -5,8 +5,12 @@ import ServiceCard from "@/components/ServiceCard";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { services } from "@/data/services";
 import { Timeline } from "@/components/ui/timeline";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const Services = () => {
+  // Use the scroll to top hook
+  useScrollToTop();
+
   // Process timeline data
   const processData = [
     {

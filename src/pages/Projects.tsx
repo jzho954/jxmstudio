@@ -1,8 +1,8 @@
-
 import React, { useState } from "react";
 import ProjectCard from "@/components/ProjectCard";
 import { Button } from "@/components/ui/button";
 import { projects } from "@/data/projects";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const Projects = () => {
   const [filter, setFilter] = useState<string | null>(null);
@@ -13,6 +13,9 @@ const Projects = () => {
     ? projects.filter(project => project.category === filter)
     : projects;
   
+  // Use the scroll to top hook
+  useScrollToTop();
+
   return (
     <div className="min-h-screen pt-20">
       {/* Header Section */}

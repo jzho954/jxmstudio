@@ -1,9 +1,12 @@
-
 import React from "react";
 import ContactForm from "@/components/ContactForm";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const Contact = () => {
+  // Use the scroll to top hook
+  useScrollToTop();
+
   return (
     <div className="min-h-screen pt-20">
       {/* Header Section */}

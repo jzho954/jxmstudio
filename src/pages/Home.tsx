@@ -8,8 +8,12 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 import { services } from "@/data/services";
 import { projects } from "@/data/projects";
 import { Timeline } from "@/components/ui/timeline";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const Home = () => {
+  // Use the scroll to top hook
+  useScrollToTop();
+
   // Select featured projects (first 3)
   const featuredProjects = projects.slice(0, 3);
 
