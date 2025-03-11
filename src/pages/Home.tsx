@@ -7,10 +7,80 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { services } from "@/data/services";
 import { projects } from "@/data/projects";
+import { Timeline } from "@/components/ui/timeline";
 
 const Home = () => {
   // Select featured projects (first 3)
   const featuredProjects = projects.slice(0, 3);
+
+  // Process timeline data
+  const processData = [
+    {
+      title: "Discovery",
+      content: (
+        <div className="prose prose-neutral dark:prose-invert">
+          <p>Initial consultation to understand your vision, goals, and requirements. We'll analyze your needs and plan the perfect approach.</p>
+          <ul className="mt-4">
+            <li>Requirements gathering</li>
+            <li>Project scope definition</li>
+            <li>Timeline planning</li>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      title: "Design",
+      content: (
+        <div className="prose prose-neutral dark:prose-invert">
+          <p>Creating the visual foundation of your project with attention to aesthetics and user experience.</p>
+          <ul className="mt-4">
+            <li>Wireframe creation</li>
+            <li>UI/UX design</li>
+            <li>Design review and feedback</li>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      title: "Development",
+      content: (
+        <div className="prose prose-neutral dark:prose-invert">
+          <p>Bringing the design to life with clean, efficient, and maintainable code.</p>
+          <ul className="mt-4">
+            <li>Frontend development</li>
+            <li>Backend integration</li>
+            <li>Responsive implementation</li>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      title: "Testing",
+      content: (
+        <div className="prose prose-neutral dark:prose-invert">
+          <p>Rigorous quality assurance to ensure everything works flawlessly.</p>
+          <ul className="mt-4">
+            <li>Cross-browser testing</li>
+            <li>Performance optimization</li>
+            <li>Bug fixing</li>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      title: "Launch",
+      content: (
+        <div className="prose prose-neutral dark:prose-invert">
+          <p>Smooth deployment and ongoing support to ensure your project's success.</p>
+          <ul className="mt-4">
+            <li>Site deployment</li>
+            <li>Performance monitoring</li>
+            <li>Post-launch support</li>
+          </ul>
+        </div>
+      ),
+    },
+  ];
 
   return (
     <div className="min-h-screen pt-16">
@@ -129,6 +199,11 @@ const Home = () => {
             </Button>
           </div>
         </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-20 bg-gray-50">
+        <Timeline data={processData} />
       </section>
     </div>
   );

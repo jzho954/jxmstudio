@@ -30,10 +30,10 @@ export const projects: Project[] = [
     id: "plumbing-overhaul",
     title: "Plumbing Overhaul",
     category: "UI/UX Design",
-    description: "Custom website with an easy booking system and mobile-friendly service pages for a local plumbing business.",
+    description: "Custom website with an easy booking system and mobile friendly service pages for a local plumbing business.",
     beforeImage: "/lovable-uploads/05427f30-a45b-4280-87a4-87cbd79563c1.png",
     afterImage: "/lovable-uploads/9502bfbe-7698-4362-ab15-aa1a1a729c58.png",
-    fullDescription: "This local plumbing company needed a website that matched their reliable service with a modern edge. I crafted a custom site from scratch, featuring a user-friendly booking system, clear service breakdowns, and mobile optimization for on-the-go customers. With sharp visuals and smooth animations, it now showcases their expertise and drives a 60% increase in online inquiries.",
+    fullDescription: "This local plumbing company needed a website that matched their reliable service with a modern edge. I crafted a custom site from scratch, featuring a user-friendly booking system, clear service breakdowns, and mobile optimization for on the go customers. With sharp visuals and smooth animations, it now showcases their expertise and drives a 120% increase in online inquiries.",
     technologies: ["React", "Framer Motion", "Tailwind CSS", "Booking API", "Responsive Design"],
     
   },
@@ -53,8 +53,8 @@ export const projects: Project[] = [
     title: "Dream JournalApp",
     category: "App Design",
     description: "Minimalist, app design and build for a client needing a dream journal app that helps the record and analyze their dreams much easier than convetional journaling.",
-    beforeImage: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2455&auto=format&fit=crop&ixlib=rb-4.0.3",
-    afterImage: "https://images.unsplash.com/photo-1545665277-5937489579f2?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3",
+    beforeImage: "/lovable-uploads/consultation.png",
+    afterImage: "/lovable-uploads/dream.png",
     fullDescription: "Client needed a dream journal app that would help them record and analyze their dreams much easier than convetional journaling. I designed a minimalist interface with advanced image optimization, lazy loading, and subtle transitions. The gallery features intuitive navigation and adapts beautifully to different screen sizes.",
     technologies: ["React Native", "Next.js", "Expo Go", "Image Optimization", "CSS Grid"],
     clientQuote: {

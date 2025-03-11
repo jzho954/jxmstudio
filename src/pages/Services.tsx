@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -200,6 +199,14 @@ const getServiceDetails = (serviceId: string): string[] => {
         "Technical SEO audits",
         "Content optimization",
         "Local SEO strategies"
+      ];
+    case "marketing":
+      return [
+        "Google Ads & Search Marketing",
+        "Facebook & Instagram Advertising",
+        "TikTok Content & Ads Strategy",
+        "Social Media Content Creation",
+        "Performance Analytics & ROI Tracking"
       ];
     default:
       return [];

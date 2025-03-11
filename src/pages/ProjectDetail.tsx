@@ -103,7 +103,7 @@ const ProjectDetail: React.FC = () => {
           )}
           {project.id === "plumbing-overhaul" && (
             <ul className="list-disc pl-6 mt-4 space-y-2">
-              <li>60% increase in online inquiries</li>
+              <li>120% increase in online inquiries</li>
               <li>Enhanced mobile responsiveness</li>
               <li>Improved service visibility</li>
               <li>Streamlined customer booking process</li>

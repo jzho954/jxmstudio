@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -47,26 +46,26 @@ const ProjectCard = ({
         
         <CardContent className="pt-4">
           <div className="grid grid-cols-2 gap-4 relative">
-            <div className="relative overflow-hidden rounded-lg">
-              <img 
-                src={beforeImage} 
-                alt={`${title} before`} 
-                className="w-full h-40 object-cover rounded-lg transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                <span className="text-white font-medium text-sm">Before</span>
+            <div className="flex flex-col gap-2">
+              <div className="relative overflow-hidden rounded-lg">
+                <img 
+                  src={beforeImage} 
+                  alt={`${title} before`} 
+                  className="w-full h-40 object-cover rounded-lg transition-transform duration-700"
+                />
               </div>
+              <span className="text-center text-sm font-medium text-gray-600">Before</span>
             </div>
             
-            <div className="relative overflow-hidden rounded-lg">
-              <img 
-                src={afterImage} 
-                alt={`${title} after`} 
-                className="w-full h-40 object-cover rounded-lg transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                <span className="text-white font-medium text-sm">After</span>
+            <div className="flex flex-col gap-2">
+              <div className="relative overflow-hidden rounded-lg">
+                <img 
+                  src={afterImage} 
+                  alt={`${title} after`} 
+                  className="w-full h-40 object-cover rounded-lg transition-transform duration-700"
+                />
               </div>
+              <span className="text-center text-sm font-medium text-gray-600">After</span>
             </div>
           </div>
         </CardContent>
