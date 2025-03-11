@@ -64,7 +64,61 @@ const ProjectDetail: React.FC = () => {
           <h2 className="text-2xl font-semibold mt-8 mb-4">The Challenge</h2>
           <p>{project.fullDescription}</p>
           
-          <h2 className="text-2xl font-semibold mt-8 mb-4">Our Approach</h2>
+          <h2 className="text-2xl font-semibold mt-8 mb-4">My Approach</h2>
+          {project.id === "pest-removal-redesign" && (
+            <div className="mb-8">
+              <p className="mb-4">
+                My concept design demonstrates a complete transformation from the old website.
+                You can view our interactive concept design:
+              </p>
+              <div className="mb-4">
+                <a 
+                  href="https://pestremoval-mockup.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-block px-4 py-2 bg-navy-600 text-white rounded-md hover:bg-navy-700 transition-colors"
+                >
+                  View Interactive Mockup
+                </a>
+              </div>
+              <p className="mb-4">
+                The new design focuses on:
+              </p>
+              <ul className="list-disc pl-6 mb-6 space-y-2">
+                <li>Clean, modern interface replacing the cluttered old design</li>
+                <li>SEO-optimized structure to improve search visibility</li>
+                <li>Fast-loading, responsive mobile layout</li>
+                <li>Streamlined lead generation process</li>
+              </ul>
+            </div>
+          )}
+          {project.id === "plumbing-overhaul" && (
+            <div className="mb-8">
+              <p className="mb-4">
+                Client wanted a themed plumbing site specifically tailored to his business needs.
+                You can view our interactive concept design:
+              </p>
+              <div className="mb-4">
+                <a 
+                  href="https://plumbing-mockup.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-block px-4 py-2 bg-navy-600 text-white rounded-md hover:bg-navy-700 transition-colors"
+                >
+                  View Interactive Mockup
+                </a>
+              </div>
+              <p className="mb-4">
+                The new design focuses on:
+              </p>
+              <ul className="list-disc pl-6 mb-6 space-y-2">
+                <li>Professional, branded interface that reflects the client's business identity</li>
+                <li>Clear service presentation to highlight expertise areas</li>
+                <li>Mobile optimized layout for on the go customers</li>
+                <li>Simplified contact process to increase conversion rates</li>
+              </ul>
+            </div>
+          )}
           <div className="grid grid-cols-1 md:grid-cols-1 gap-6 my-8">
             <div className="rounded-lg overflow-hidden">
               <h3 className="text-lg font-medium mb-2">Before & After</h3>
