@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
 import NavHeader from "@/components/ui/nav-header";
+import { Badge } from "@/components/ui/badge";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -58,13 +59,9 @@ const Navbar = () => {
         {!isMobile && (
           <div className="flex items-center">
             <NavHeader />
-            <Button
-              asChild
-              variant="outline"
-              className="ml-4 bg-white/10 text-white border-white/20 hover:bg-white/20"
-            >
-              <Link to="/contact">Let's Talk</Link>
-            </Button>
+            <div className="ml-4">
+              <Badge text="Let's Talk" to="/contact" />
+            </div>
           </div>
         )}
 
@@ -101,13 +98,9 @@ const Navbar = () => {
                 <Link to={link.path}>{link.name}</Link>
               </Button>
             ))}
-            <Button
-              asChild
-              variant="outline"
-              className="justify-start mt-2 bg-white/10 text-white border-white/20 hover:bg-white/20"
-            >
-              <Link to="/contact">Let's Talk</Link>
-            </Button>
+            <div className="mt-2">
+              <Badge text="Let's Talk" to="/contact" />
+            </div>
           </div>
         </div>
       )}
