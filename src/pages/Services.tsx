@@ -172,22 +172,6 @@ const getServiceDetails = (serviceId: string): string[] => {
         "Visual hierarchy optimization",
         "Mood boards and style guides"
       ];
-    case "ui-ux":
-      return [
-        "User journey mapping",
-        "Wireframing and prototyping",
-        "Usability testing",
-        "Information architecture",
-        "Interaction design"
-      ];
-    case "frontend-dev":
-      return [
-        "Clean, semantic HTML5",
-        "Modern CSS and JavaScript",
-        "React framework implementation",
-        "Performance optimization",
-        "Animation and micro-interactions"
-      ];
     case "backend-dev":
       return [
         "API development and integration",
