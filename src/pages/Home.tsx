@@ -91,36 +91,41 @@ const Home = () => {
       <Hero />
       
       {/* Services Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-navy-500 mb-3">What I Offer</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Specialized web design and development services to create digital experiences that captivate and convert.
-            </p>
-          </div>
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-4">What I Offer</h2>
+          <p className="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">
+            Specialized web design and development services to create digital experiences 
+            that captivate and convert.
+          </p>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {services.map((service, index) => (
-              <ServiceCard
-                key={service.id}
-                id={service.id}
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-                gradient={service.color}
-                delay={index * 0.1}
-              />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((service) => (
+              <div key={service.id} className="bg-white rounded-lg shadow-md p-6 flex flex-col h-full">
+                <div className={`p-3 rounded-lg bg-gradient-to-r ${service.color} w-fit mb-4`}>
+                  <service.icon className="w-6 h-6 text-white" />
+                </div>
+                
+                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                <p className="text-gray-600 text-sm flex-grow">{service.description}</p>
+                
+                <Link 
+                  to={`/services/${service.id}`}
+                  className="mt-4 text-navy-600 font-medium flex items-center gap-1 hover:text-navy-800 transition-colors"
+                >
+                  Learn More <ArrowRight size={16} />
+                </Link>
+              </div>
             ))}
           </div>
           
           <div className="text-center mt-12">
-            <Button asChild variant="outline" className="border-navy-500 text-navy-600 hover:bg-navy-50">
-              <Link to="/services" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-2">
-                View All Services
-                <ArrowRight size={16} />
-              </Link>
-            </Button>
+            <Link 
+              to="/services" 
+              className="inline-flex items-center gap-2 px-6 py-3 border border-navy-500 text-navy-600 rounded-md hover:bg-navy-50 transition-colors"
+            >
+              View All Services <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>

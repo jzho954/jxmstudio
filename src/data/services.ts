@@ -16,13 +16,7 @@ export const services: Service[] = [
     description: "Captivating, conversion-focused designs that make an impact across all devices. Built with cutting-edge frameworks to elevate your brand's digital presence.",
     color: "from-navy-500 to-navy-700"
   },
-  {
-    id: "ui-ux",
-    icon: LayoutGrid,
-    title: "Conversion-Driven UI/UX",
-    description: "Strategic interfaces and customer journey mapping that transform visitors into loyal clients. I create experiences that not only look stunning but drive measurable business results.",
-    color: "from-navy-600 to-navy-800"
-  },
+  
   {
     id: "marketing",
     icon: Code,

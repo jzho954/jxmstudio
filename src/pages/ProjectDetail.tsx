@@ -149,8 +149,8 @@ const ProjectDetail: React.FC = () => {
           <h2 className="text-2xl font-semibold mt-8 mb-4">The Results</h2>
           {project.id === "windshield-revamp" && (
             <ul className="list-disc pl-6 mt-4 space-y-2">
-              <li>40% increase in appointment bookings</li>
-              <li>80% boost in local search traffic</li>
+              <li>80% increase in appointment bookings</li>
+              <li>200% boost in local search traffic</li>
               <li>Added mobile compatibility</li>
               <li>Streamlined booking process</li>
             </ul>
