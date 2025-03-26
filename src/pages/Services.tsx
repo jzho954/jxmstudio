@@ -15,76 +15,56 @@ const Services = () => {
   const processData = [
     {
       title: "Discovery",
-      content: (
-        <div>
-          <p className="text-gray-700 dark:text-gray-300 mb-4">
-            Understanding your business, goals, and target audience to create a strategic plan that aligns with your vision.
-          </p>
-          <div className="space-y-2">
-            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
-              ✅ In-depth consultation and requirement gathering
-            </div>
-            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
-              ✅ Market and competitor analysis
-            </div>
-            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
-              ✅ User persona development
-            </div>
-            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
-              ✅ Strategic planning and project scope definition
-            </div>
-          </div>
-        </div>
-      ),
+      emoji: "🔍",
+      content: {
+        description: "Understanding your business, goals, and target audience to create a strategic plan that aligns with your vision.",
+        bulletPoints: [
+          "In-depth consultation and requirement gathering",
+          "Market and competitor analysis",
+          "User persona development",
+          "Strategic planning and project scope definition"
+        ]
+      }
     },
     {
-      title: "Design",
-      content: (
-        <div>
-          <p className="text-gray-700 dark:text-gray-300 mb-4">
-            Creating wireframes, mockups, and prototypes with multiple review cycles to ensure the design meets your expectations.
-          </p>
-          <div className="space-y-2">
-            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
-              ✅ Information architecture and user flow mapping
-            </div>
-            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
-              ✅ Wireframing and interactive prototyping
-            </div>
-            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
-              ✅ Visual design with brand alignment
-            </div>
-            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
-              ✅ Iterative feedback and refinement process
-            </div>
-          </div>
-        </div>
-      ),
+      title: "Planning",
+      emoji: "📋",
+      content: {
+        description: "Creating a detailed roadmap for your project's success with clear milestones and deliverables.",
+        bulletPoints: [
+          "Project timeline development",
+          "Resource allocation",
+          "Technical requirements specification",
+          "Risk assessment and mitigation strategies"
+        ]
+      }
     },
     {
-      title: "Delivery",
-      content: (
-        <div>
-          <p className="text-gray-700 dark:text-gray-300 mb-4">
-            Development, testing, and launch with continued support to ensure your website performs optimally.
-          </p>
-          <div className="space-y-2">
-            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
-              ✅ Clean, performant code implementation
-            </div>
-            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
-              ✅ Cross-browser and device testing
-            </div>
-            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
-              ✅ SEO optimization and analytics setup
-            </div>
-            <div className="flex gap-2 items-center text-gray-700 dark:text-gray-300">
-              ✅ Post-launch support and maintenance
-            </div>
-          </div>
-        </div>
-      ),
+      title: "Execution",
+      emoji: "⚡",
+      content: {
+        description: "Bringing your vision to life with expert development and continuous communication.",
+        bulletPoints: [
+          "Agile development process",
+          "Regular progress updates",
+          "Quality assurance testing",
+          "Performance optimization"
+        ]
+      }
     },
+    {
+      title: "Launch",
+      emoji: "🚀",
+      content: {
+        description: "Ensuring a smooth deployment and successful project launch with comprehensive support.",
+        bulletPoints: [
+          "Pre-launch testing and validation",
+          "Deployment and configuration",
+          "Post-launch monitoring",
+          "Training and documentation"
+        ]
+      }
+    }
   ];
 
   return (

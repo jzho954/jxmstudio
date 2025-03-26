@@ -9,6 +9,7 @@ import { services } from "@/data/services";
 import { projects } from "@/data/projects";
 import { Timeline } from "@/components/ui/timeline";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
+import { motion } from "framer-motion";
 
 const Home = () => {
   // Use the scroll to top hook
@@ -17,73 +18,77 @@ const Home = () => {
   // Select featured projects (first 3)
   const featuredProjects = projects.slice(0, 3);
 
+  // Animation variants
+  const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+  };
+
+  const staggerContainer = {
+    animate: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const scaleIn = {
+    initial: { scale: 0.9, opacity: 0 },
+    animate: { scale: 1, opacity: 1 },
+    transition: { duration: 0.5 }
+  };
+
   // Process timeline data
   const processData = [
     {
       title: "Discovery",
-      content: (
-        <div className="prose prose-neutral dark:prose-invert">
-          <p>Initial consultation to understand your vision, goals, and requirements. We'll analyze your needs and plan the perfect approach.</p>
-          <ul className="mt-4">
-            <li>Requirements gathering</li>
-            <li>Project scope definition</li>
-            <li>Timeline planning</li>
-          </ul>
-        </div>
-      ),
+      emoji: "🔍",
+      content: {
+        description: "Initial consultation to understand your vision, goals, and requirements. We'll analyze your needs and plan the perfect approach.",
+        bulletPoints: [
+          "Requirements gathering",
+          "Project scope definition",
+          "Timeline planning"
+        ]
+      }
     },
     {
       title: "Design",
-      content: (
-        <div className="prose prose-neutral dark:prose-invert">
-          <p>Creating the visual foundation of your project with attention to aesthetics and user experience.</p>
-          <ul className="mt-4">
-            <li>Wireframe creation</li>
-            <li>UI/UX design</li>
-            <li>Design review and feedback</li>
-          </ul>
-        </div>
-      ),
+      emoji: "🎨",
+      content: {
+        description: "Creating the visual foundation of your project with attention to aesthetics and user experience.",
+        bulletPoints: [
+          "Wireframe creation",
+          "UI/UX design",
+          "Design review and feedback"
+        ]
+      }
     },
     {
       title: "Development",
-      content: (
-        <div className="prose prose-neutral dark:prose-invert">
-          <p>Bringing the design to life with clean, efficient, and maintainable code.</p>
-          <ul className="mt-4">
-            <li>Frontend development</li>
-            <li>Backend integration</li>
-            <li>Responsive implementation</li>
-          </ul>
-        </div>
-      ),
+      emoji: "💻",
+      content: {
+        description: "Bringing the design to life with clean, efficient, and maintainable code.",
+        bulletPoints: [
+          "Frontend development",
+          "Backend integration",
+          "Responsive implementation"
+        ]
+      }
     },
     {
       title: "Testing",
-      content: (
-        <div className="prose prose-neutral dark:prose-invert">
-          <p>Rigorous quality assurance to ensure everything works flawlessly.</p>
-          <ul className="mt-4">
-            <li>Cross-browser testing</li>
-            <li>Performance optimization</li>
-            <li>Bug fixing</li>
-          </ul>
-        </div>
-      ),
-    },
-    {
-      title: "Launch",
-      content: (
-        <div className="prose prose-neutral dark:prose-invert">
-          <p>Smooth deployment and ongoing support to ensure your project's success.</p>
-          <ul className="mt-4">
-            <li>Site deployment</li>
-            <li>Performance monitoring</li>
-            <li>Post-launch support</li>
-          </ul>
-        </div>
-      ),
-    },
+      emoji: "✅",
+      content: {
+        description: "Rigorous quality assurance to ensure everything works flawlessly.",
+        bulletPoints: [
+          "Cross-browser testing",
+          "Performance optimization",
+          "Bug fixing"
+        ]
+      }
+    }
   ];
 
   return (
@@ -93,90 +98,151 @@ const Home = () => {
       {/* Services Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-4">What I Offer</h2>
-          <p className="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">
-            Specialized web design and development services to create digital experiences 
-            that captivate and convert.
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            <h2 className="text-4xl font-bold text-center mb-4">What I Offer</h2>
+            <p className="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">
+              Specialized web design and development services to create digital experiences 
+              that captivate and convert.
+            </p>
+          </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service) => (
-              <div key={service.id} className="bg-white rounded-lg shadow-md p-6 flex flex-col h-full">
-                <div className={`p-3 rounded-lg bg-gradient-to-r ${service.color} w-fit mb-4`}>
-                  <service.icon className="w-6 h-6 text-white" />
-                </div>
-                
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-gray-600 text-sm flex-grow">{service.description}</p>
-                
-                <Link 
-                  to={`/services/${service.id}`}
-                  className="mt-4 text-navy-600 font-medium flex items-center gap-1 hover:text-navy-800 transition-colors"
-                >
-                  Learn More <ArrowRight size={16} />
-                </Link>
-              </div>
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            {services.map((service, index) => (
+              <motion.div
+                key={service.id}
+                variants={fadeInUp}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                <ServiceCard
+                  id={service.id}
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                  gradient={service.color}
+                  delay={index * 0.1}
+                />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
           
-          <div className="text-center mt-12">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="text-center mt-12"
+          >
             <Link 
               to="/services" 
               className="inline-flex items-center gap-2 px-6 py-3 border border-navy-500 text-navy-600 rounded-md hover:bg-navy-50 transition-colors"
             >
               View All Services <ArrowRight size={16} />
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
       
       {/* Projects Preview Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
             <h2 className="text-4xl font-bold text-navy-500 mb-3">My Work</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               A selection of my recent projects showcasing web design and development expertise.
             </p>
-          </div>
+          </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
             {featuredProjects.map((project, index) => (
-              <ProjectCard
+              <motion.div
                 key={project.id}
-                id={project.id}
-                title={project.title}
-                category={project.category}
-                description={project.description}
-                beforeImage={project.beforeImage}
-                afterImage={project.afterImage}
-                delay={index * 0.1}
-              />
+                variants={scaleIn}
+                whileHover={{ y: -10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ProjectCard
+                  id={project.id}
+                  title={project.title}
+                  category={project.category}
+                  description={project.description}
+                  beforeImage={project.beforeImage}
+                  afterImage={project.afterImage}
+                  delay={index * 0.1}
+                />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
           
-          <div className="text-center mt-12">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="text-center mt-12"
+          >
             <Button asChild variant="outline" className="border-navy-500 text-navy-600 hover:bg-navy-50">
               <Link to="/projects" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-2">
                 View All Projects
                 <ArrowRight size={16} />
               </Link>
             </Button>
-          </div>
+          </motion.div>
         </div>
       </section>
       
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-navy-500 to-navy-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-navy-500 to-navy-700 text-white overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl mx-auto text-center"
+          >
             <h2 className="text-4xl font-bold mb-6">Ready to Create Something Amazing?</h2>
             <p className="text-xl text-white/80 mb-8">
               Let's collaborate to build a website that perfectly represents your brand and engages your audience.
             </p>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-left">
+            <motion.div
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10"
+            >
+              <motion.div
+                variants={fadeInUp}
+                whileHover={{ scale: 1.02 }}
+                className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-left"
+              >
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-yellow-500 flex-shrink-0 mt-0.5" />
                   <div>
@@ -186,9 +252,13 @@ const Home = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
               
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-left">
+              <motion.div
+                variants={fadeInUp}
+                whileHover={{ scale: 1.02 }}
+                className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-left"
+              >
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-yellow-500 flex-shrink-0 mt-0.5" />
                   <div>
@@ -198,15 +268,23 @@ const Home = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
             
-            <Button asChild size="lg" className="bg-white text-navy-600 hover:bg-white/90 font-medium px-8">
-              <Link to="/contact">
-                Schedule Your Free Consultation
-              </Link>
-            </Button>
-          </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <Button asChild size="lg" className="bg-white text-navy-600 hover:bg-white/90 font-medium px-8">
+                <Link to="/contact">
+                  Schedule Your Free Consultation
+                </Link>
+              </Button>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
