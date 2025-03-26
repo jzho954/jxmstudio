@@ -1,17 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Calendar, Mail, MessageSquare, User } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 
+// Replace this with your new access key from Web3Forms dashboard
+const ACCESS_KEY = "1963842a-07fc-4a5d-b218-f2415c578b1f";
+const SUBMISSION_TIMEOUT = 8000; // 8 seconds timeout
+
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [metadata, setMetadata] = useState({
+    domain: "",
+    page_url: "",
+    user_agent: "",
+  });
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
+    botcheck: "", // Keep this for spam protection
   });
+
+  // Pre-collect metadata when component mounts
+  useEffect(() => {
+    setMetadata({
+      domain: window.location.hostname,
+      page_url: window.location.href,
+      user_agent: window.navigator.userAgent,
+    });
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -26,7 +45,11 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
+    // Create an AbortController for timeout handling
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), SUBMISSION_TIMEOUT);
+
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -34,14 +57,21 @@ const ContactForm = () => {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
+        signal: controller.signal,
         body: JSON.stringify({
-          access_key: "83498590-8ffe-4249-93e5-d8fde2cb7abc",
+          access_key: ACCESS_KEY,
           name: formData.name,
           email: formData.email,
           message: formData.message,
+          botcheck: formData.botcheck,
           subject: "New Contact Form Submission",
+          from_name: "JXM Studio Contact Form",
+          ...metadata,
+          timestamp: new Date().toISOString(),
         }),
       });
+      
+      clearTimeout(timeoutId);
       
       const result = await response.json();
       if (result.success) {
@@ -53,17 +83,24 @@ const ContactForm = () => {
           name: "",
           email: "",
           message: "",
+          botcheck: "",
         });
       } else {
         throw new Error(result.message || "Something went wrong");
       }
     } catch (error) {
+      console.error("Form submission error:", error);
+      const errorMessage = error instanceof Error && error.name === 'AbortError' 
+        ? "Request timed out. Please try again."
+        : error instanceof Error ? error.message : "Failed to send message. Please try again.";
+      
       toast({
         title: "Error",
-        description: error instanceof Error ? error.message : "Failed to send message. Please try again.",
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {
+      clearTimeout(timeoutId);
       setIsSubmitting(false);
     }
   };
@@ -108,6 +145,16 @@ const ContactForm = () => {
             onChange={handleChange}
           />
         </div>
+
+        {/* Honeypot field - hidden from users but will catch bots */}
+        <input
+          type="checkbox"
+          name="botcheck"
+          className="hidden"
+          style={{ display: 'none' }}
+          onChange={handleChange}
+          value={formData.botcheck}
+        />
       </div>
       
       <div className="px-6 py-4 bg-indigo-50 rounded-lg border border-indigo-100 flex items-start gap-3">
