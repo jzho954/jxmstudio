@@ -53,11 +53,11 @@ const Footer = () => {
                 <Linkedin size={20} />
               </a>
               
-              <a href="mailto:jamiezhou777@gmail.com" className="hover:text-[#ffff33] transition-colors" aria-label="Email">
+              <a href="mailto:jxmstudioweb@gmail.com" className="hover:text-[#ffff33] transition-colors" aria-label="Email">
                 <Mail size={20} />
               </a>
             </div>
-            <p className="text-white/80">jamiezhou777@gmail.com</p>
+            <p className="text-white/80">jxmstudioweb@gmail.com</p>
           </div>
         </div>
         
