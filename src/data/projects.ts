@@ -62,5 +62,20 @@ export const projects: Project[] = [
       author: "Harrison",
       company: "Ensor"
     }
+  },
+  {
+    id: "ground-up-landscaping",
+    title: "GroundUpLandscaping",
+    category: "Web Design",
+    description: "Complete website transformation for a landscaping company, featuring modern design and intuitive service navigation.",
+    beforeImage: "/lovable-uploads/landscapingbf.png",
+    afterImage: "/lovable-uploads/landscaping0.png",
+    fullDescription: "GroundUpLandscaping needed a website that would showcase their landscaping expertise and make it easy for customers to explore their services. I created a modern, visually appealing design that highlights their work through before and after transformations. The new site features an intuitive navigation system, clear service breakdowns, and a streamlined quote request process.",
+    technologies: ["React", "Tailwind CSS", "Framer Motion", "Responsive Design", "Image Optimization"],
+    clientQuote: {
+      text: "The new website perfectly captures our vision and has already brought in more customer inquiries. The before and after showcase really helps potential clients see what we can do.",
+      author: "Andrew",
+      company: "GroundUpLandscaping"
+    }
   }
 ];

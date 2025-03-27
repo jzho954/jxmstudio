@@ -96,7 +96,7 @@ const ProjectDetail: React.FC = () => {
             <div className="mb-8">
               <p className="mb-4">
                 Client wanted a themed plumbing site specifically tailored to his business needs.
-                You can view our interactive concept design:
+                You can view the interactive concept design I made for him:
               </p>
               <div className="mb-4">
                 <a 
